@@ -1,4 +1,4 @@
-# Architektura NeoCraft — stan po etapie 1
+# Architektura NeoCraft — stan po etapie 2
 
 ## Zasada integracji
 
@@ -20,3 +20,7 @@ Powyższe granice są planem, nie deklaracją ukończonych integracji. Nie zosta
 ## Etap 1
 
 CMake buduje `neocraft_core`, aplikację `neocraft` oraz opcjonalny test CTest. Model zawiera identyfikatory kilku przykładowych bloków i haszowalne współrzędne chunków; nie jest to jeszcze implementacja świata voxelowego.
+
+## Etap 2 — Windows/Vulkan
+
+Na Windows `app/src/main.cpp` uruchamia `engine/renderer/src/vulkan_app.cpp`. Renderer tworzy okno Win32, instance, surface, wybiera urządzenie z obsługą grafiki i prezentacji, tworzy swapchain i render pass czyszczący obraz. CMake wykrywa systemowy Vulkan SDK przez `find_package(Vulkan REQUIRED)`. Aktualny etap nie zawiera jeszcze pipeline'u shaderów ani obiektów 3D.
