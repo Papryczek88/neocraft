@@ -1,2 +1,3 @@
-# neocraft
-NeoCraft 1.0 — trzydzielny voxelowy silnik i gra z rendererem Vulkan
+# NeoCraft
+
+Niezależna gra voxelowa 3D. Instrukcje i stan implementacji: [README_PL.md](README_PL.md).

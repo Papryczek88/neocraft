@@ -1,0 +1,58 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-ninja",
+      "displayName": "Windows x64 — Ninja, Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/windows-ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "NEOCRAFT_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "default-ninja",
+      "displayName": "Ninja, Debug (current host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/default-ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "NEOCRAFT_BUILD_TESTS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-ninja",
+      "configurePreset": "windows-ninja"
+    },
+    {
+      "name": "default-ninja",
+      "configurePreset": "default-ninja"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "windows-ninja",
+      "configurePreset": "windows-ninja",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "default-ninja",
+      "configurePreset": "default-ninja",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}
